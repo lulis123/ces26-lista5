@@ -24,4 +24,10 @@ app.get('/process_get', (req,res)=>{
     console.log(response);
 })
 
+app.get('/getDatabase', (req,res)=>{
+    const database = require('./database/database.json');
+    console.log(database);
+    res.end(JSON.stringify(database));
+})
+
 app.listen('8081', () => console.log('App na porta 8081'));

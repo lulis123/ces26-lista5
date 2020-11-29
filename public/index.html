@@ -4,7 +4,15 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+            }
+        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body style="align-content: center;">
@@ -19,7 +27,8 @@
         <p id="warningMessage" style="color:red" ></p>
         <br/>
         <button id="getDatabase">Get Database</button>
-        <p id="databaseInfo">     
-        </p>
+        <br/>
+        <table id="databaseTable"> </table>     
+        </div>
     </body>
 </html>

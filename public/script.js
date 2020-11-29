@@ -27,3 +27,19 @@ $("#registerForm").submit(function(){
     }
 
 });
+
+$('#getDatabase').click(function(){
+    $('#databaseTable').empty();
+    $.ajax({
+        url: "http://localhost:8081/getDatabase",
+        method:"GET",
+        dataType:"json",
+        success:function(data){
+            console.log(data);
+            $('#databaseTable').append('<tr><td>' + 'Nome' + '</td><td>' + 'Idade' + '</td></tr>')
+            data.forEach(element => {
+                $('#databaseTable').append('<tr><td>' + element.name + '</td><td>' + element.age + '</td></tr>')
+            })
+        }
+    })
+})
