@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body style="align-content: center;">
+        <script src="script.js" async defer></script>
+        <h1>CES-26 Lista 5</h1>
+        <h2>Forms de idade</h2> 
+        <form action ="http://localhost:8081/process_get">
+            Nome: <input type="text" name="name"/> <br/>
+            Idade: <input type="text" name="age"/> <br/>
+            <input type="submit" value="Submit"/>
+        </form>             
+        <br/>
+        <form action ="http://localhost:8081/file_upload" method="post" enctype = "multipart/form-data">
+            <input type = "file" name="file" size="50"/> <br/>
+            <input type = "submit" value = "Upload File"/>
+        </form>
+        <br/>
+        <button id="getDatabase">Get Database</button>
+        <p id="databaseInfo">     
+        </p>
+    </body>
+</html>
