@@ -14,13 +14,16 @@ app.get('/process_get', (req,res)=>{
         name:req.query.name,
         age: req.query.age
     };
+    parsedAge = parseInt(response.age);
     const database = require('./database/database.json');
-    database.push(response);
-    fs.writeFile('./database/database.json',JSON.stringify(database), function(err){
-        if(err){
-            console.log(err);
-        }
-    });
+    if(!isNaN(parsedAge) && parsedAge > 17){
+        database.push(response);
+        fs.writeFile('./database/database.json',JSON.stringify(database), function(err){
+            if(err){
+                console.log(err);
+            }
+        });
+    }
     console.log(response);
 })
 
