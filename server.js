@@ -1,9 +1,7 @@
 const express = require('express');
 const path = require('path');
-const $ = require('jquery');
+const fs = require('fs');
 const app = express();
-
-
 
 app.use(express.static('public'))
 
@@ -16,6 +14,13 @@ app.get('/process_get', (req,res)=>{
         name:req.query.name,
         age: req.query.age
     };
+    const database = require('./database/database.json');
+    database.push(response);
+    fs.writeFile('./database/database.json',JSON.stringify(database), function(err){
+        if(err){
+            console.log(err);
+        }
+    });
     console.log(response);
 })
 
